@@ -1,0 +1,19 @@
+name: Spiegel live site
+on:
+  workflow_dispatch:
+  push:
+    paths: ['MIRROR_FROM']
+permissions:
+  contents: write
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          SRC=$(cat MIRROR_FROM)
+          rm -rf site && python3 tools/mirror.py "$SRC" site
+          git rm -q MIRROR_FROM
+          git config user.name "site-mirror"
+          git config user.email "site-mirror@users.noreply.github.com"
+          git add -A && git commit -m "Spiegel van $SRC als bron van de site" && git push
