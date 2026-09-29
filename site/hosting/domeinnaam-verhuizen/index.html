@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Domeinnaam verhuizen zonder downtime</title>
+<meta name="description" content="Het verschil tussen het verhuizen van de registratie en het verhuizen van de website, met de volgorde die downtime voorkomt.">
+<link rel="canonical" href="https://hostingendomeinen.nl/hosting/domeinnaam-verhuizen/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Hosting en Domeinen">
+<meta property="og:title" content="Domeinnaam verhuizen zonder downtime">
+<meta property="og:description" content="Het verschil tussen het verhuizen van de registratie en het verhuizen van de website, met de volgorde die downtime voorkomt.">
+<meta property="og:url" content="https://hostingendomeinen.nl/hosting/domeinnaam-verhuizen/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="alternate" type="application/rss+xml" title="Nieuws van hostingendomeinen.nl" href="/nieuws/feed.xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" width="30" height="30" role="img" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="7" fill="#15172e"/><path d="M16 5.5c5.8 0 10.5 4.7 10.5 10.5S21.8 26.5 16 26.5 5.5 21.8 5.5 16 10.2 5.5 16 5.5z" fill="none" stroke="#c98a2e" stroke-width="1.6"/><path d="M16 5.5c2.6 2.7 4 6.4 4 10.5s-1.4 7.8-4 10.5c-2.6-2.7-4-6.4-4-10.5s1.4-7.8 4-10.5z" fill="none" stroke="#5fc3b8" stroke-width="1.4"/><path d="M6.2 12.6h19.6M6.2 19.4h19.6" stroke="#5fc3b8" stroke-width="1.4"/></svg></span>
+      <span class="brand-txt"><b>hostingendomeinen</b><span class="brand-tld">.nl</span></span>
+    </a>
+    <nav class="nav-desk" aria-label="Hoofdmenu"><ul><li><a href="/verkopen/">Verkopen</a></li><li><a href="/kopen/">Kopen</a></li><li><a href="/waarde/">Waarde</a></li><li><a href="/extensies/">Extensies</a></li><li><a href="/hosting/" aria-current="page">Hosting</a></li><li><a href="/juridisch/">Juridisch</a></li><li><a href="/begrippen/">Begrippen</a></li><li><a href="/nieuws/">Nieuws</a></li><li><a href="/over/">Over</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+    <details class="navbox">
+      <summary aria-label="Menu"><span class="bars" aria-hidden="true"></span><span>Menu</span></summary>
+      <nav class="nav" aria-label="Hoofdmenu, uitklapbaar"><ul><li><a href="/verkopen/">Verkopen</a></li><li><a href="/kopen/">Kopen</a></li><li><a href="/waarde/">Waarde</a></li><li><a href="/extensies/">Extensies</a></li><li><a href="/hosting/" aria-current="page">Hosting</a></li><li><a href="/juridisch/">Juridisch</a></li><li><a href="/begrippen/">Begrippen</a></li><li><a href="/nieuws/">Nieuws</a></li><li><a href="/over/">Over</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+    </details>
+  </div>
+</header>
+<main id="main">
+<nav class="crumbs" aria-label="Kruimelpad"><a href="/">Home</a><span class="sep">/</span><a href="/hosting/">Hosting en DNS</a><span class="sep">/</span><span aria-current="page">Domeinnaam verhuizen</span></nav>
+<article>
+<header class="ph">
+<p class="kicker">Techniek</p>
+<h1>Een domeinnaam verhuizen</h1>
+<p class="lead">De registratie verhuizen raakt de website niet. De website verhuizen wel, en daar bepaalt de volgorde of de mail blijft werken.</p>
+</header>
+
+<p>Verhuizen kan twee dingen betekenen die vaak door elkaar lopen: de domeinnaam naar een andere registrar brengen, of de website en de mail naar een andere server brengen. Ze staan los van elkaar en kunnen op verschillende momenten.</p><h2>De domeinnaam naar een andere registrar</h2><ol class="rows"><li><span class="rows-n">01</span><div><h3>Het verhuistoken opvragen</h3><p>Bij de huidige registrar. Bij .nl heeft dat token geen vervaldatum, bij .be is de code zeven dagen geldig en bij .com zestig dagen.</p></div></li><li><span class="rows-n">02</span><div><h3>De verhuizing starten bij de nieuwe registrar</h3><p>Daar wordt de code ingevoerd. De nieuwe registrar handelt de rest af met de registry.</p></div></li><li><span class="rows-n">03</span><div><h3>De nameservers meenemen of aanpassen</h3><p>Bij een verhuizing van alleen de registratie blijven de nameservers meestal ongewijzigd, waardoor de website blijft draaien.</p></div></li><li><span class="rows-n">04</span><div><h3>Controleren in de whois</h3><p>Pas als de registry de wijziging heeft verwerkt is de verhuizing rond. Het klantenpaneel van een registrar loopt daar soms op vooruit.</p></div></li></ol><aside class="note"><p>Een verhuizing van de registratie raakt de website niet, zolang de nameservers ongewijzigd blijven. Dat is de reden waarom een verkoop meestal zonder downtime verloopt.</p></aside><h2>De website en de mail naar een andere server</h2><ol class="rows"><li><span class="rows-n">01</span><div><h3>De site en de mailboxen klaarzetten op de nieuwe omgeving</h3><p>Inclusief een SSL-certificaat, zodat het adres met https werkt zodra het verkeer daar binnenkomt.</p></div></li><li><span class="rows-n">02</span><div><h3>De TTL verlagen</h3><p>Een dag van tevoren, naar bijvoorbeeld 300 seconden, zodat de omschakeling snel doorwerkt.</p></div></li><li><span class="rows-n">03</span><div><h3>De records aanmaken op de nieuwe nameservers</h3><p>A, MX en de TXT-records voor mail. Pas als alles er staat is de volgende stap veilig.</p></div></li><li><span class="rows-n">04</span><div><h3>De nameservers omzetten</h3><p>Bij de registrar. Vanaf dat moment gelden de nieuwe records.</p></div></li><li><span class="rows-n">05</span><div><h3>Meekijken en de TTL terugzetten</h3><p>Controleren of de site laadt en of er mail binnenkomt, en daarna de TTL weer verhogen.</p></div></li></ol><aside class="band band-teal"><h2>Mail is het onderdeel dat misgaat</h2><p>Een website die een uur onbereikbaar is, valt op en herstelt zichzelf. Mail die tijdens een verhuizing bij de oude server aankomt terwijl de mailboxen daar al zijn opgeheven, wordt geweigerd en komt niet alsnog binnen. Daarom de oude mailboxen pas opheffen als er een week lang niets meer binnenkomt.</p></aside><nav class="verder" aria-label="Verder lezen"><h2>Verder in deze gids</h2><ul><li><a href="/hosting/nameservers-en-dns/">Nameservers en DNS</a></li><li><a href="/hosting/e-mail-bij-een-domein/">E-mail bij een domein</a></li><li><a href="/hosting/domein-zonder-website/">Domein zonder website</a></li><li><a href="/hosting/">Terug naar hosting en DNS</a></li></ul></nav>
+</article>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid"><div class="foot-col"><h2>Domeinnaam verkopen</h2><ul><li><a href="/verkopen/">Verkopen in stappen</a></li><li><a href="/verkopen/waarde-bepalen/">Waarde bepalen</a></li><li><a href="/verkopen/vraagprijs/">Vraagprijs kiezen</a></li><li><a href="/verkopen/kopers-vinden/">Kopers vinden</a></li><li><a href="/verkopen/overdracht/">Overdracht regelen</a></li></ul></div><div class="foot-col"><h2>Domeinnaam kopen</h2><ul><li><a href="/kopen/">Kopen in stappen</a></li><li><a href="/kopen/vrije-domeinnamen/">Vrije namen vinden</a></li><li><a href="/kopen/verlopen-domeinnamen/">Verlopen namen</a></li><li><a href="/kopen/due-diligence/">Controle vooraf</a></li><li><a href="/kopen/investeren/">Investeren</a></li></ul></div><div class="foot-col"><h2>Achtergrond</h2><ul><li><a href="/waarde/">Waardecalculator</a></li><li><a href="/extensies/">Extensies</a></li><li><a href="/hosting/">Hosting</a></li><li><a href="/juridisch/">Juridisch</a></li><li><a href="/begrippen/">Begrippenlijst</a></li></ul></div><div class="foot-col"><h2>Deze site</h2><ul><li><a href="/over/">Over hostingendomeinen.nl</a></li><li><a href="/nieuws/">Nieuws</a></li><li><a href="/contact/">Contact</a></li><li><a href="/partners/">Partners</a></li><li><a href="/privacybeleid/">Privacybeleid</a></li><li><a href="/cookiebeleid/">Cookiebeleid</a></li></ul></div></div>
+    <div class="foot-bar">
+      <p>hostingendomeinen.nl is een onafhankelijke gids over de handel in domeinnamen. Geen registrar, geen hostingpartij.</p>
+      <p class="foot-legal"><a href="/privacybeleid/">Privacybeleid</a> <span class="sep">/</span> <a href="/cookiebeleid/">Cookiebeleid</a> <span class="sep">/</span> <a href="/contact/">Contact</a> <span class="sep">/</span> <a href="/sitemap.xml">Sitemap</a></p>
+      <p class="foot-c">&copy; 2026 hostingendomeinen.nl</p>
+    </div>
+  </div>
+</footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"ff7ccc7eff4d4217bab252a2a8e61072","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
